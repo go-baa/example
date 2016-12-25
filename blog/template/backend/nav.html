@@ -1,0 +1,26 @@
+<div id="header" class="header navbar navbar-default navbar-fixed-top">
+    <!-- begin container-fluid -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="{{ url "content_index" }}" class="navbar-brand">Baa-blog</a>
+        </div>
+
+        <!-- begin header navigation right -->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown navbar-user">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="{{ .auth.Avatar }}" alt="" />
+                    <span class="hidden-xs">{{ .auth.Nickname }}</span>
+                </a>
+                <ul class="dropdown-menu fadeInLeft">
+                    <li class="arrow"></li>
+                    <li><a href="{{ url "change_pwd" }}">Change Password</a></li>
+                    <li class="divider"></li>
+                    <li><a href="{{ url "auth_logout" }}">Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- end header navigation right -->
+    </div>
+    <!-- end container-fluid -->
+</div>

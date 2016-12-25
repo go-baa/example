@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Baa-blog | Admin</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/vendor/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" href="/assets/vendor/datatable/css/dataTables.bootstrap.min.css" />
+	<link rel="stylesheet" href="/assets/css/backend/index.css" />
+</head>
+
+<body>
+    <!-- begin #page-container -->
+    <div id="page-container">
+		<!-- begin #nav -->
+		{{ template "backend/nav" . }}
+		<!-- end #nav -->
+
+        <div id="content">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <span>Content Manage</span>
+                    <a href="{{ url "content_add" }}" class="btn btn-white btn-sm">
+                                <i class="fa fa-plus"></i> New
+                    </a>
+                    <form class="form-inline m-b-15">
+                        <div class="form-group m-r-20">
+                            <input type="text" class="form-control" name="keyword" placeholder="keyword"/>
+                        </div>
+                        <input type="submit" value="" style="display: none;">
+                    </form>
+                </div>
+                <div class="panel-body p-15">
+                    <!-- Table -->
+                    <table id="data-table" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width:50px">#</th>
+                                <th>Title</th>
+                                <th style="width:100px">Updated</th>
+                                <th style="width:80px">Manage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page container -->
+
+    <div id="delete-modal" class="modal fade delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Confirm</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure to delete ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button id="delete-confirm" type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendor/gritter/js/jquery.gritter.min.js"></script>
+<script src="/assets/vendor/datatable/js/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/datatable/js/dataTables.bootstrap.min.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/index.js"></script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Baa Blog - {{ .data.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/clean/clean.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- begin #nav -->
+    {{ template "frontend/nav" . }}
+    <!-- end #nav -->
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('/assets/img/cover.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading" style="padding: 80px !important;">
+                        <h1>{{ .data.Title }}</h1>
+                        <span class="meta">Posted by <a href="#">{{ .data.Author }}</a> on {{ .data.Updated }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    {{ .data.Content.Content | html }}
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- begin #footer -->
+    {{ template "frontend/footer" . }}
+    <!-- end #footer -->
+</body>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</html>

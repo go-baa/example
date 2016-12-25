@@ -1,0 +1,54 @@
+[default]
+# app
+app.name = baa-blog
+app.version = 0.1
+app.url = ""
+debug = false
+
+# http
+http.address = 0.0.0.0
+http.port = 80
+http.access_open = off
+http.access_adapter = file
+http.access_log = data/log/access.log
+http.access_format = `$remote_addr "$http_x_forwarded_for" "$request" $status $body_bytes_sent $exec_time "$http_referer" "$http_user_agent"`
+
+# output log to os.Stderr
+log.file = os.Stderr
+# 0 off, 1 fatal, 2 panic, 5 error, 6 warn, 10 info, 11 debug
+log.level = 11
+
+# session
+session.redis.addr = 127.0.0.1:6379
+session.redis.password = ""
+session.redis.db = 0
+session.redis.prefix = "BaaBlogSession:"
+
+# cache
+cache.adapter = "redis"
+cache.section = "baaBlog"
+cache.prefix = "baaBlogCache:"
+cache.redis.host = "127.0.0.1"
+cache.redis.port = "6379"
+cache.redis.password = ""
+cache.redis.poolsize = 100
+
+# db blog
+db.blog.host = 127.0.0.1:3306
+db.blog.user = root
+db.blog.pass = 123456
+db.blog.name = blog
+
+# upload
+upload.baseUri = "/upload/"
+upload.basePath = "./public/upload/"
+
+# upload.post
+upload.post.path = "/post/"
+upload.post.uri = "/post/"
+upload.post.maxsize = 5242880
+upload.post.extension = ".jpg;.jpeg;.png;"
+
+# development overwrite default config
+[development]
+debut = true

@@ -1,0 +1,57 @@
+#header .nav img {
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin-top: -11px;
+    margin-left: 5px;
+}
+
+#content {
+    margin-top: 100px;
+    width: 100%
+}
+
+#content .panel {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#content .panel > .panel-heading {
+    background-color: #FFFFFF;
+}
+
+#content .panel > .panel-heading form {
+    float: right;
+    margin-top: -5px;
+    margin-right: 10px;
+}
+
+#content .panel > .panel-heading a {
+    float: right;
+    border: 1px solid #cdcdcd;
+    margin-top: -5px;
+}
+
+#content .panel > .panel-heading form input {
+    height: 30px;
+}
+
+#content .panel th {
+    text-align: center;
+}
+
+#content .panel table td:first-child {
+    text-align: center;
+}
+
+#content .panel table td:nth-child(3) {
+    text-align: center;
+}
+
+#content .panel table td:nth-child(4) {
+    text-align: center;
+}
+
+#content .panel table .m-r-5 {
+    margin: 5px !important;
+}

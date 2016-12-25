@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Baa Blog - About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/vendor/clean/clean.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- begin #nav -->
+    {{ template "frontend/nav" . }}
+    <!-- end #nav -->
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/assets/img/cover.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading" style="padding: 80px !important;">
+                        <h1>About Me</h1>
+                        <hr class="small">
+                        <span class="subheading">This is what I am.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Baa is an express Go web framework with routing, middleware, dependency injection, http context.</p>
+                <h3>Features</h3>
+                <ul>
+                    <li>Route support static, param, group</li>
+                    <li>Route support handler chain</li>
+                    <li>Route support static file serve</li>
+                    <li>Middleware supoort handle chain</li>
+                    <li>Dependency injection support*</li>
+                    <li>Context support JSON/JSONP/XML/HTML response</li>
+                    <li>Centralized HTTP error handling</li>
+                    <li>Centralized log handling</li>
+                    <li>Whichever template engine support(emplement baa.Renderer)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- begin #footer -->
+    {{ template "frontend/footer" . }}
+    <!-- end #footer -->
+</body>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</html>

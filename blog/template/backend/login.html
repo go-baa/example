@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Baa-blog | Login</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/vendor/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" href="/assets/css/backend/login.css" />
+</head>
+
+<body>
+    <div id="page-container">
+        <div class="login bg-black">
+            <div class="login-header">
+                <div class="brand">
+                    Baa-blog
+                    <small>simple baa-based blog</small>
+                </div>
+            </div>
+            <div class="login-content">
+                <form id="login-form" action="{{ url " auth_login " }}" class="margin-bottom-0">
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control input-lg" placeholder="username" name="username" />
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="password" class="form-control input-lg" placeholder="password" name="password" />
+                    </div>
+                    <div class="login-buttons">
+                        <button type="submit" class="btn btn-info btn-block btn-lg">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/gritter/js/jquery.gritter.min.js"></script>
+<script src="/assets/js/request.js"></script>
+<script src="/assets/js/login.js"></script>
+
+</html>

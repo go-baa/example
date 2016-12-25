@@ -1,0 +1,65 @@
+body {
+    background: #f7f7f7;
+}
+
+.login {
+    margin-top: 160px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border: 1px solid;
+    height: 250px;
+    background: #212121!important;
+}
+
+.login-header {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    right: 0;
+    width: 450px;
+    padding: 0 40px;
+    margin-left: -225px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.login .brand {
+    padding: 0;
+    font-size: 28px;
+}
+
+.brand small {
+    font-size: 14px;
+    display: block;
+}
+
+.login-content {
+    padding: 40px 40px;
+    color: #999;
+    width: 450px;
+    margin: 0 auto;
+}
+
+.form-control {
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}
+
+.btn-info {
+    border: none;
+    border-radius: 0;
+    background: #178a69
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+    border: none;
+    background: #1ea07b!important;
+}
+
+
