@@ -9,3 +9,4 @@ A simple example of blog based on Baa web framework
 * Create a new database on mysql, refer to `model/sql/baa-blog.sql`.
 * Build and run.
 * Default account: `baa` with password `admin`.
+* Login url: http://domain.com/admin.
