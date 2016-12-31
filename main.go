@@ -9,12 +9,18 @@ import (
 	"github.com/baa-middleware/logger"
 	"github.com/baa-middleware/recovery"
 	"github.com/go-baa/baa"
+	"github.com/go-baa/render"
 )
 
 func main() {
 	b := baa.New()
 	b.Use(logger.Logger())
 	b.Use(recovery.Recovery())
+	b.SetDI("render", render.New(render.Options{
+		Baa:        b,
+		Root:       "template/",
+		Extensions: []string{".html", ".tmpl"},
+	}))
 
 	b.Get("/", func(c *baa.Context) {
 		c.String(200, "Hello, World!\n")
@@ -41,11 +47,11 @@ func main() {
 
 	b.Get("/tpl", func(c *baa.Context) {
 		c.Set("name", "micate")
-		html, _ := c.Fetch("template/test.html")
-		c.Text(200, html)
+		c.HTML(200, "template/test.html")
 	})
 
 	b.Get("/file", func(c *baa.Context) {
+		c.Fetch("template/header.html")
 		c.HTML(200, "template/upload.html")
 	})
 
