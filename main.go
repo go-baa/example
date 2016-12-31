@@ -6,15 +6,15 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/baa-middleware/logger"
+	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/recovery"
-	"github.com/go-baa/baa"
 	"github.com/go-baa/render"
+	"gopkg.in/baa.v1"
 )
 
 func main() {
 	b := baa.New()
-	b.Use(logger.Logger())
+	b.Use(accesslog.Logger())
 	b.Use(recovery.Recovery())
 	b.SetDI("render", render.New(render.Options{
 		Baa:        b,
