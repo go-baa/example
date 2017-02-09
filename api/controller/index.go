@@ -61,3 +61,10 @@ func output(c *baa.Context, code int, message string, data interface{}) {
 	}
 	c.JSON(200, ret)
 }
+
+func init() {
+	_, total, err := model.ArticleModel.Search(1, 1)
+	if err == nil && total == 0 {
+		model.ArticleModel.FillTestData()
+	}
+}

@@ -4,12 +4,12 @@ import "time"
 
 // Article article data scheme
 type Article struct {
-	ID         int       `json:"id" gorm:"primary_key; AUTO_INCREMENT UNSIGNED"`
-	UserID     int       `json:"user_id"`
-	Title      string    `json:"title"`
-	Content    string    `json:"content"`
-	Status     int       `json:"status"`
-	CreateTime time.Time `json:"create_time"`
+	ID         int       `json:"id" gorm:"primary_key; type:int(10) unsigned NOT NULL AUTO_INCREMENT;"`
+	UserID     int       `json:"user_id" gorm:"index:idx_user_id;type:int(10) unsigned NOT NULL DEFAULT '0';"`
+	Title      string    `json:"title" gorm:"type:varchar(100) NOT NULL DEFAULT '';"`
+	Content    string    `json:"content" gorm:"type:text NOT NULL;"`
+	Status     int       `json:"status" gorm:"type:tinyint(1) unsigned NOT NULL DEFAULT '0';"`
+	CreateTime time.Time `json:"create_time" gorm:"type:timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP;"`
 }
 
 // ArticleInfo full info for show content
@@ -76,4 +76,31 @@ func (t *articleModel) Search(page, pagesize int) ([]*Article, int, error) {
 	}
 
 	return rows, total, err
+}
+
+// Create create an article
+func (t *articleModel) Create(userid int, title, content string) (int, error) {
+	row := new(Article)
+	row.UserID = userid
+	row.Title = title
+	row.Content = content
+	row.Status = ArticleStatusNormal
+	row.CreateTime = time.Now()
+	err := db.Create(row).Error
+	if err != nil {
+		return 0, err
+	}
+	return row.ID, nil
+}
+
+func (t *articleModel) FillTestData() error {
+	userid, err := UserModel.Create("baa", "safeie@163.com")
+	if err != nil {
+		return err
+	}
+	_, err = t.Create(userid, "Hello Baa", "this is first article for baa api project")
+	if err != nil {
+		return err
+	}
+	return nil
 }
