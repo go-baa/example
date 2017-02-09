@@ -1,6 +1,6 @@
 [default]
 # app
-app.name = baa-blog
+app.name = baaBlog
 app.version = 0.1
 app.url = ""
 debug = false
@@ -11,7 +11,7 @@ http.port = 80
 http.access_open = off
 http.access_adapter = file
 http.access_log = data/log/access.log
-http.access_format = `$remote_addr "$http_x_forwarded_for" "$request" $status $body_bytes_sent $exec_time "$http_referer" "$http_user_agent"`
+http.access_format = `%remote_addr% "%http_x_forwarded_for%" %request%" %status% %body_bytes_sent% %exec_time% "%http_referer%" "%http_user_agent%"`
 
 # output log to os.Stderr
 log.file = os.Stderr

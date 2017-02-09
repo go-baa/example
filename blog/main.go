@@ -20,5 +20,7 @@ func main() {
 	router.Router(app)
 
 	// 运行
-	app.Run(setting.Config.MustString("http.address", "0.0.0.0") + ":" + setting.Config.MustString("http.port", "8001"))
+	addr := setting.Config.MustString("http.address", "0.0.0.0")
+	port := setting.Config.MustString("http.port", "1323")
+	app.Run(addr + ":" + port)
 }
