@@ -21,7 +21,7 @@ func main() {
 	}
 
 	app.Get("/", controller.IndexController.Index)
-	app.Get("/:page", controller.IndexController.Index)
+	app.Get("/list/:page", controller.IndexController.Index)
 	app.Group("/show", func() {
 		app.Get("/", func(c *baa.Context) {
 			c.Redirect(302, "/")

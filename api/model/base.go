@@ -1,46 +1,49 @@
 package model
 
 import (
-	"sync"
+	"encoding/gob"
+	"fmt"
+	"time"
+
+	"github.com/go-baa/example/api/model/base"
+	"github.com/go-baa/log"
+	"github.com/go-baa/setting"
+	"github.com/jinzhu/gorm"
 )
 
-// db simple database
-type db struct {
-	store map[string]*table
-	lock  sync.RWMutex
+// db 数据库引擎
+var db *gorm.DB
+
+// Ping 测试数据库连接
+func Ping() {
+	db.DB().Ping()
 }
 
-// table table has rows of same type
-type table struct {
-	rows []*row
-	lock sync.RWMutex
-}
-
-// row base component of database
-type row struct {
-	data    interface{}
-	deleted bool
-	lock    sync.RWMutex
-}
-
-// Table get table store, return or create it
-func (t *db) Table(name string) (*table, error) {
-	t.lock.Lock()
-	tab, ok := t.store[name]
-	if !ok {
-		tab = new(table)
-		t.store[name] = tab
+func init() {
+	var err error
+	config := base.LoadConfigs("api")
+	if db, err = base.NewEngine(config); err != nil {
+		log.Fatalf("[orm] error: %v\n", err)
 	}
-	t.lock.Unlock()
-	return tab, nil
+	db.DB().SetMaxIdleConns(10)
+	// 开启调试
+	if setting.Debug {
+		db.LogMode(true)
+	}
+
+	// 同步MySQL结构
+	db.Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4").AutoMigrate(
+		&User{},
+		&Article{},
+	)
+
+	// 注册gob类型，for 缓存
+	gob.Register(time.Time{})
 }
 
-// Rows returns all of data
-func (t *table) Rows(v interface{}) error {
-
-}
-
-// Row return a row of data
-func (t *table) Row(id int, v interface{}) error {
-
+func errorf(format string, a ...interface{}) error {
+	if len(a) > 0 {
+		return fmt.Errorf(format, a...)
+	}
+	return fmt.Errorf(format)
 }
