@@ -4,7 +4,6 @@ import (
 	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
 	"github.com/baa-middleware/session"
-	"github.com/go-baa/setting"
 	"gopkg.in/baa.v1"
 )
 
@@ -14,17 +13,14 @@ func Initializes(b *baa.Baa) {
 	b.Use(recovery.Recovery())
 
 	// Session
-	redisOptions := session.RedisOptions{}
-	redisOptions.Addr = setting.Config.MustString("session.redis.addr", "")
-	redisOptions.DB = setting.Config.MustInt64("session.redis.db", 0)
-	redisOptions.Password = setting.Config.MustString("session.redis.password", "")
-	redisOptions.Prefix = setting.Config.MustString("session.redis.prefix", "")
+	cacheOptions := session.MemoryOptions{}
+	cacheOptions.BytesLimit = 32 * 1024 * 1024 // 32M
 
 	b.Use(session.Middleware(session.Options{
 		Name: "BaaBlogSession",
 		Provider: &session.ProviderOptions{
-			Adapter: "redis",
-			Config:  redisOptions,
+			Adapter: "memory",
+			Config:  cacheOptions,
 		},
 		Cookie: &session.CookieOptions{
 			Path:     "/",

@@ -18,21 +18,6 @@ log.file = os.Stderr
 # 0 off, 1 fatal, 2 panic, 5 error, 6 warn, 10 info, 11 debug
 log.level = 11
 
-# session
-session.redis.addr = 127.0.0.1:6379
-session.redis.password = ""
-session.redis.db = 0
-session.redis.prefix = "BaaBlogSession:"
-
-# cache
-cache.adapter = "redis"
-cache.section = "baaBlog"
-cache.prefix = "baaBlogCache:"
-cache.redis.host = "127.0.0.1"
-cache.redis.port = "6379"
-cache.redis.password = ""
-cache.redis.poolsize = 100
-
 # db blog
 db.blog.host = 127.0.0.1:3306
 db.blog.user = root

@@ -35,10 +35,11 @@ func Initializes(b *baa.Baa) {
 		Prefix:  setting.Config.MustString("cache.prefix", ""),
 		Adapter: setting.Config.MustString("cache.adapter", "memory"),
 		Config: map[string]interface{}{
-			"host":     setting.Config.MustString("cache.redis.host", "127.0.0.1"),
-			"port":     setting.Config.MustString("cache.redis.port", "6379"),
-			"password": setting.Config.MustString("cache.redis.password", ""),
-			"poolsize": setting.Config.MustInt("cache.redis.poolsize", 10),
+			"host":       setting.Config.MustString("cache.redis.host", "127.0.0.1"),
+			"port":       setting.Config.MustString("cache.redis.port", "6379"),
+			"password":   setting.Config.MustString("cache.redis.password", ""),
+			"poolsize":   setting.Config.MustInt("cache.redis.poolsize", 10),
+			"bytesLimit": int64(32 * 1024 * 1024),
 		},
 	}))
 }
