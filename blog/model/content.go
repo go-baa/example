@@ -1,9 +1,10 @@
 package model
 
 import (
+	"time"
+
 	"github.com/go-baa/example/blog/model/base"
 	"github.com/go-baa/example/blog/modules/util"
-	"time"
 )
 
 type contentModel struct{}
@@ -139,7 +140,11 @@ func (t *Content) Format() (*ContentInfo, error) {
 // GetDescription 获取内容摘要 简单截取
 func (t contentModel) GetDescription(content string) string {
 	cleanContent := util.StripTags([]byte(content))
-	return string(cleanContent[0:50])
+	if len(cleanContent) > 50 {
+		return string(cleanContent[0:50])
+	}
+
+	return string(cleanContent)
 }
 
 // Format 列表项目格式化

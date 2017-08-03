@@ -2,9 +2,8 @@ package main
 
 import (
 	"github.com/go-baa/example/blog/middleware"
-	"github.com/go-baa/example/blog/modules/setting"
 	"github.com/go-baa/example/blog/router"
-
+	"github.com/go-baa/setting"
 	"gopkg.in/baa.v1"
 )
 

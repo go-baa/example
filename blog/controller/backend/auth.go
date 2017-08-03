@@ -1,13 +1,12 @@
 package backend
 
 import (
-	"github.com/go-baa/example/blog/controller/base"
-	"github.com/go-baa/example/blog/model"
 	"net/http"
 
-	"github.com/go-baa/example/blog/modules/log"
-
 	"github.com/baa-middleware/session"
+	"github.com/go-baa/example/blog/controller/base"
+	"github.com/go-baa/example/blog/model"
+	"github.com/go-baa/log"
 	"gopkg.in/baa.v1"
 )
 

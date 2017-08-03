@@ -1,12 +1,12 @@
 package router
 
 import (
-	"github.com/go-baa/example/blog/controller/backend"
-	"github.com/go-baa/example/blog/controller/frontend"
-	"github.com/go-baa/example/blog/model"
 	"net/http"
 
 	"github.com/baa-middleware/session"
+	"github.com/go-baa/example/blog/controller/backend"
+	"github.com/go-baa/example/blog/controller/frontend"
+	"github.com/go-baa/example/blog/model"
 	"gopkg.in/baa.v1"
 )
 

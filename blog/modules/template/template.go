@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-baa/example/blog/modules/setting"
+	"github.com/go-baa/setting"
 	"github.com/go-baa/example/blog/modules/util"
 
 	"gopkg.in/baa.v1"

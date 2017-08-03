@@ -4,7 +4,7 @@ import (
 	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
 	"github.com/baa-middleware/session"
-	"github.com/go-baa/example/blog/modules/setting"
+	"github.com/go-baa/setting"
 	"gopkg.in/baa.v1"
 )
 

@@ -8,12 +8,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-baa/example/blog/model"
-	"github.com/go-baa/example/blog/modules/log"
-	"github.com/go-baa/example/blog/modules/setting"
-	"github.com/go-baa/example/blog/modules/util"
-
 	"github.com/baa-middleware/session"
+	"github.com/go-baa/example/blog/model"
+	"github.com/go-baa/example/blog/modules/util"
+	"github.com/go-baa/log"
+	"github.com/go-baa/setting"
 	"gopkg.in/baa.v1"
 )
 

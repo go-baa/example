@@ -1,11 +1,10 @@
 package router
 
 import (
-	"github.com/go-baa/example/blog/modules/log"
-	"github.com/go-baa/example/blog/modules/setting"
-	"github.com/go-baa/example/blog/modules/template"
-
 	"github.com/go-baa/cache"
+	"github.com/go-baa/example/blog/modules/template"
+	"github.com/go-baa/log"
+	"github.com/go-baa/setting"
 	// redis
 	_ "github.com/go-baa/cache/redis"
 	"github.com/go-baa/render"
