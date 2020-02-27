@@ -4,7 +4,7 @@ import (
 	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
 	"github.com/baa-middleware/session"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 // Initializes 初始化中间件

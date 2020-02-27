@@ -7,10 +7,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-baa/baa"
 	"github.com/go-baa/log"
 	"github.com/go-baa/setting"
 	"github.com/jinzhu/gorm"
-	"gopkg.in/baa.v1"
 
 	// 导入mysql驱动
 	_ "github.com/jinzhu/gorm/dialects/mysql"

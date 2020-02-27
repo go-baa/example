@@ -8,8 +8,8 @@ import (
 
 	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/recovery"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/render"
-	"gopkg.in/baa.v1"
 )
 
 func main() {

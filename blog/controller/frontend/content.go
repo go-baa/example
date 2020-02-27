@@ -1,9 +1,9 @@
 package frontend
 
 import (
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/controller/base"
 	"github.com/go-baa/example/blog/model"
-	"gopkg.in/baa.v1"
 )
 
 type contentController struct{}

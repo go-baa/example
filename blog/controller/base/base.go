@@ -9,11 +9,11 @@ import (
 	"strings"
 
 	"github.com/baa-middleware/session"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/model"
 	"github.com/go-baa/example/blog/modules/util"
 	"github.com/go-baa/log"
 	"github.com/go-baa/setting"
-	"gopkg.in/baa.v1"
 )
 
 // NormalReturn 标准返回格式

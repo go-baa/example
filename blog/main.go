@@ -1,10 +1,10 @@
 package main
 
 import (
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/middleware"
 	"github.com/go-baa/example/blog/router"
 	"github.com/go-baa/setting"
-	"gopkg.in/baa.v1"
 )
 
 // main 入口

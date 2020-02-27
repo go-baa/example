@@ -1,14 +1,13 @@
 package router
 
 import (
+	"github.com/go-baa/baa"
 	"github.com/go-baa/cache"
+	_ "github.com/go-baa/cache/redis"
 	"github.com/go-baa/example/blog/modules/template"
 	"github.com/go-baa/log"
-	"github.com/go-baa/setting"
-	// redis
-	_ "github.com/go-baa/cache/redis"
 	"github.com/go-baa/render"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/setting"
 )
 
 // Initializes 初始化

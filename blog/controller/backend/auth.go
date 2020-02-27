@@ -4,10 +4,10 @@ import (
 	"net/http"
 
 	"github.com/baa-middleware/session"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/controller/base"
 	"github.com/go-baa/example/blog/model"
 	"github.com/go-baa/log"
-	"gopkg.in/baa.v1"
 )
 
 type authController struct{}

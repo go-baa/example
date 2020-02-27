@@ -1,7 +1,7 @@
 package backend
 
 import (
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 type indexController struct{}

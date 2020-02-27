@@ -4,8 +4,8 @@ import (
 	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/api/controller"
-	"gopkg.in/baa.v1"
 )
 
 func main() {

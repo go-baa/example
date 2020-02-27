@@ -1,8 +1,8 @@
 package backend
 
 import (
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/controller/base"
-	"gopkg.in/baa.v1"
 )
 
 type commonController struct{}

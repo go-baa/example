@@ -7,10 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-baa/setting"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/blog/modules/util"
-
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/setting"
 )
 
 // Funcs 模板函数库

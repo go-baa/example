@@ -1,9 +1,9 @@
 package controller
 
 import (
+	"github.com/go-baa/baa"
 	"github.com/go-baa/example/api/model"
 	"github.com/go-baa/log"
-	"gopkg.in/baa.v1"
 )
 
 type index struct{}
