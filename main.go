@@ -47,12 +47,14 @@ func main() {
 
 	b.Get("/tpl", func(c *baa.Context) {
 		c.Set("name", "micate")
-		c.HTML(200, "template/test.html")
+		//c.HTML(200, "template/test.html")
+		c.HTML(200, "test")
 	})
 
 	b.Get("/file", func(c *baa.Context) {
 		c.Fetch("template/header.html")
-		c.HTML(200, "template/upload.html")
+		//c.HTML(200, "template/upload.html")
+		c.HTML(200, "upload")
 	})
 
 	b.Post("/file", func(c *baa.Context) {
